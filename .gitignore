@@ -65,3 +65,4 @@ upload
 
 # config file
 src/config/index.pro.js
+src/config/index.dev.js

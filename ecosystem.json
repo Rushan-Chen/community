@@ -11,11 +11,11 @@
   }],
   "deploy": {
     "production": {
-      "user": "node",
-      "host": ["0.0.0.0"],
+      "user": "web",
+      "host": ["47.106.147.94"],
       "port": "22",
       "ref": "origin/master",
-      "repo": "https://github.com/xugy0926/community.git",
+      "repo": "git@github.com:Rushan-Chen/community.git",
       "path": "/var/www/production/community",
       "ssh_options": "StrictHostKeyChecking=no",
       "post-deploy": "yarn && yarn run build && pm2 startOrRestart ecosystem.json --env production",
@@ -24,10 +24,10 @@
       }
     },
     "staging" : {
-      "user" : "node",
-      "host" : "0.0.0.0",
+      "user" : "web",
+      "host" : "47.106.147.94",
       "ref"  : "origin/master",
-      "repo" : "https://github.com/xugy0926/community.git",
+      "repo" : "git@github.com:Rushan-Chen/community.git",
       "path" : "/var/www/development/community",
       "ssh_options": ["StrictHostKeyChecking=no", "PasswordAuthentication=no"],
       "post-deploy": "yarn && yarn run build && pm2 startOrRestart ecosystem.json --env dev",
