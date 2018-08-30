@@ -18,7 +18,6 @@
         username: '',
         userId: '',
         password: '',
-        rePassword: '',
         email: '',
         weixin: '',
         qq: '',
@@ -36,8 +35,6 @@
         canLoadData: true,
         isLoading: false,
         pages: 1,
-        newest: false,
-        good: false,
         postId: '',
         title: '',
         content: '',
@@ -82,7 +79,6 @@
             .post(dataPrefix + '/user/signup', {
               loginname: this.loginname,
               password: this.password,
-              rePassword: this.rePassword,
               email: this.email
             })
             .then(this.parse)
@@ -155,9 +151,6 @@
         getPosts(url, params) {
           if (!this.canLoadData) return;
           this.isLoading = true;
-          this.newest =
-            typeof params.good !== 'undefined' ? !params.good : true;
-          this.good = typeof params.good !== 'undefined' ? params.good : false;
           axios
             .get(url, { params })
             .then(this.parse)
